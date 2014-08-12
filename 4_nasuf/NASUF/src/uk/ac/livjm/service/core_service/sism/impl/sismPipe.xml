@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jxta:PipeAdvertisement>
+<jxta:PipeAdvertisement xmlns:jxta="http://jxta.org">
+        <Id>
+                urn:jxta:uuid-59616261646162614E504720503250330C3D05BF77B9432C877BDEA6D722D9EF04
+        </Id>
+        <Type>
+                JxtaUnicast
+        </Type>
+        <Name>
+                SISMService: urn:jxta:uuid-59616261646162614A787461503250336651B81A0B634C7BAD1F8D18D99F013903
+        </Name>
+</jxta:PipeAdvertisement>

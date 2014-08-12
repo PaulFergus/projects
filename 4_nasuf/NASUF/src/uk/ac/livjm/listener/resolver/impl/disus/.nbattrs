@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE attributes PUBLIC "-//NetBeans//DTD DefaultAttributes 1.0//EN" "http://www.netbeans.org/dtds/attributes-1_0.dtd">
+<attributes version="1.0">
+    <fileobject name="DiSUS_DistrES_Handler.java">
+        <attr name="class_dependency_NASUF.src.uk.ac.livjm.listener.resolver.ResolverHandler" stringvalue="DiSUS_DistrES_Handler"/>
+        <attr name="class_dependency_java.lang.Runnable" stringvalue="DiSUS_DistrES_Handler"/>
+    </fileobject>
+    <fileobject name="DiSUS_Handler.java">
+        <attr name="class_dependency_NASUF.src.uk.ac.livjm.listener.resolver.ResolverHandler" stringvalue="DiSUS_Handler"/>
+    </fileobject>
+    <fileobject name="DiSUS_SISM_Handler.java">
+        <attr name="class_dependency_NASUF.src.uk.ac.livjm.listener.resolver.ResolverHandler" stringvalue="DiSUS_SISM_Handler"/>
+        <attr name="class_dependency_java.lang.Runnable" stringvalue="DiSUS_SISM_Handler"/>
+    </fileobject>
+    <fileobject name="MediaCenter_Handler.java">
+        <attr name="class_dependency_NASUF.src.uk.ac.livjm.listener.resolver.ResolverHandler" stringvalue="MediaCenter_Handler"/>
+    </fileobject>
+</attributes>

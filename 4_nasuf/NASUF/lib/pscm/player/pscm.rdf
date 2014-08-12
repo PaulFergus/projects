@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<rdf:RDF
+	xmlns:base="http://www.livjm.ac.uk/Services#"
+	xmlns:profile="http://www.daml.org/services/owl-s/1.0/Profile.owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:process="http://www.daml.org/services/owl-s/1.0/Process.owl#">
+	<profile:Profile rdf:about="http://www.daml.org/services/owl-s/1.0/Profile.owl#PSCMProfile">
+		<profile:hasPrecondition>
+      			<process:Precondition rdf:about="http://www.livjm.ac.uk/ServiceRequest.owl#MediaPlayingDevice">        				<process:parameterType 
+					rdf:resource="http://www.livjm.ac.uk/ServiceRequest.owl#MediaPlayingDevice"/>
+      			</process:Precondition>
+    		</profile:hasPrecondition>
+
+    		<profile:hasEffect>
+      			<process:Effect rdf:about="http://www.livjm.ac.uk/ServiceRequest.owl#TransferOut">
+        			<process:parameterType rdf:resource="http://www.livjm.ac.uk/ServiceRequest.owl#TransferOut"/>
+      			</process:Effect>
+    		</profile:hasEffect>
+
+    		<profile:hasInput>
+      			<process:Input rdf:about="http://www.livjm.ac.uk/ServiceRequest.owl#Play">
+        			<process:parameterType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+      			</process:Input>
+    		</profile:hasInput>
+
+		<profile:hasInput>
+      			<process:Input rdf:about="http://www.livjm.ac.uk/ServiceRequest.owl#Stop">
+        			<process:parameterType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+      			</process:Input>
+    		</profile:hasInput>
+
+    		<profile:hasOutput>
+      			<process:Output rdf:about="http://www.livjm.ac.uk/ServiceRequest.owl#RadioWave">
+        			<process:parameterType rdf:resource="http://www.livjm.ac.uk/ServiceRequest.owl#RadioWave"/>
+      			</process:Output>
+    		</profile:hasOutput>
+
+  	</profile:Profile>
+</rdf:RDF>

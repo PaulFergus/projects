@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Created-By: NetBeans IDE
+Specified-By: NASUF/NASUF.jarContent
+Main-Class: NASUF.src.uk.ac.livjm.device.impl.player.PlayerDeviceUI

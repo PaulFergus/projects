@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jxta:PipeAdvertisement>
+<jxta:PipeAdvertisement xmlns:jxta="http://jxta.org">
+        <Id>
+                urn:jxta:uuid-59616261646162614E5047205032503320EECB64226B4F30AD759C0EA8BCDC3004
+        </Id>
+        <Type>
+                JxtaUnicast
+        </Type>
+        <Name>
+                DECAPService: urn:jxta:uuid-59616261646162614A787461503250336651B81A0B634C7BAD1F8D18D99F013903
+        </Name>
+</jxta:PipeAdvertisement>

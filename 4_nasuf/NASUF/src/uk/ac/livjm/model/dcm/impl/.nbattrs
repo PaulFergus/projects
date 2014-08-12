@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE attributes PUBLIC "-//NetBeans//DTD DefaultAttributes 1.0//EN" "http://www.netbeans.org/dtds/attributes-1_0.dtd">
+<attributes version="1.0">
+    <fileobject name="DCMProfile.java">
+        <attr name="class_dependency_NASUF.src.uk.ac.livjm.model.dcm.IDCM" stringvalue="DCMProfile"/>
+    </fileobject>
+    <fileobject name="DCMProperty.java">
+        <attr name="class_dependency_NASUF.src.uk.ac.livjm.model.dcm.IDCMProperty" stringvalue="DCMProperty"/>
+    </fileobject>
+    <fileobject name="DCMStatement.java">
+        <attr name="class_dependency_NASUF.src.uk.ac.livjm.model.dcm.IDCMStatement" stringvalue="DCMStatement"/>
+    </fileobject>
+    <fileobject name="DefaultAttribute.java">
+        <attr name="class_dependency_NASUF.src.uk.ac.livjm.model.dcm.IDefaultAttribute" stringvalue="DefaultAttribute"/>
+    </fileobject>
+</attributes>

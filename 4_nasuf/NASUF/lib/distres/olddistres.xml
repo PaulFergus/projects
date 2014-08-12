@@ -1,0 +1,1661 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns="http://www.cyc.com/2004/06/04/cyc#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="">
+        <owl:versionInfo>$Id: DistrES.java,v 0.1 2005/04/25
+            fergus Exp $</owl:versionInfo>
+        <rdfs:comment>This ontology is used by DistrES. For know
+		every device that implements the DistrES ontology will
+		implement this ontology. For experimental purposes this
+		ontology contains the concepts associated with all the 
+		functions provided by each device within the network.
+		In reality this ontology woul only contain concepts 
+		directly relating to the functions the device provides.
+		For example if this ontology was to be used by a speaker
+		then the only concepts that it would contain would be 
+		concepts relating the funnctions provided by a speaker.</rdfs:comment>
+    </owl:Ontology>
+
+    <!-- Supporting Classes -->
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="AccessingCDROMData">
+        <rdfs:comment>An #$EmployeeComputerActivityType and a
+            specialization of #$DataSending.  This is the collection of
+            #$Events in which data is accessed from a CD through a
+            #$CD-ROMDriver and sent to some output device.</rdfs:comment>
+        <rdf:type rdf:resource="#TemporalObjectType"/>
+        <rdf:type rdf:resource="#EmployeeComputerActivityType"/>
+        <rdfs:subClassOf rdf:resource="#ComputerActivity"/>
+        <rdfs:subClassOf rdf:resource="#DataSending"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="AccessingData-DivX">
+        <rdfs:comment>A specialization of #$DataSending. Each instance
+            of this collection is an #$Event in which data is accessed
+            from a #$DivXFileCopy and sent to some output device.</rdfs:comment>
+        <rdf:type rdf:resource="#TemporalObjectType"/>
+        <rdf:type rdf:resource="#EmployeeComputerActivityType"/>
+        <rdfs:subClassOf rdf:resource="#DataSending"/>
+        <rdfs:subClassOf rdf:resource="#ComputerActivity"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="AccessingData-DVD">
+        <rdfs:comment>A specialization of #$DataSending. Each instance
+            of this collection is an #$Event in which data is accessed
+            from a #$DVD-Disk, perhaps also interacting with a
+            #$DVDPlayer device, and sent to some output device.</rdfs:comment>
+        <rdf:type rdf:resource="#TemporalObjectType"/>
+        <rdf:type rdf:resource="#EmployeeComputerActivityType"/>
+        <rdfs:subClassOf rdf:resource="#ComputerActivity"/>
+        <rdfs:subClassOf rdf:resource="#DataSending"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="AccessingData-MP3">
+        <rdfs:comment>A specialization of #$DataSending. Each instance
+            of this collection is an #$Event in which data is accessed
+            from a #$MP3FileCopy and sent to some output device.</rdfs:comment>
+        <rdf:type rdf:resource="#TemporalObjectType"/>
+        <rdf:type rdf:resource="#EmployeeComputerActivityType"/>
+        <rdfs:subClassOf rdf:resource="#DataSending"/>
+        <rdfs:subClassOf rdf:resource="#ComputerActivity"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="AccessingData-VCD">
+        <rdfs:comment>A specialization of #$DataSending. Each instance
+            of this collection is an #$Event in which data is accessed
+            from a #$VCDFileCopy and sent to some output device.</rdfs:comment>
+        <rdf:type rdf:resource="#TemporalObjectType"/>
+        <rdf:type rdf:resource="#EmployeeComputerActivityType"/>
+        <rdfs:subClassOf rdf:resource="#DataSending"/>
+        <rdfs:subClassOf rdf:resource="#ComputerActivity"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="AccessingData-Xvid">
+        <rdfs:comment>A specialization of #$DataSending. Each instance
+            of this collection is an #$Event in which data is accessed
+            from a #$MP3FileCopy and sent to some output device.</rdfs:comment>
+        <rdf:type rdf:resource="#TemporalObjectType"/>
+        <rdf:type rdf:resource="#EmployeeComputerActivityType"/>
+        <rdfs:subClassOf rdf:resource="#DataSending"/>
+        <rdfs:subClassOf rdf:resource="#ComputerActivity"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="Action">
+        <rdfs:comment>The collection of #$Events (q.v.) that are carried
+            out by some  doer  (see #$doneBy).  Instances of #$Action
+            include any event in which one or more actors effect some
+            change in the (tangible or intangible) state of the world,
+            typically by an expenditure of effort or energy.  Note that
+            it is not required that any tangible object be moved,
+            changed, produced, or destroyed for an action to occur; the
+            effects of an action might be intangible (such as a change
+            in a bank balance or the intimidation of a subordinate).
+            Note also that the doer of an action, though typically an
+            #$Agent (q.v.), need not be (e.g. a falling rock that dents
+            a car&apos;s roof).  Depending upon the context, doers of
+            actions might be animate or inanimate, conscious or
+            nonconscious.  For actions that are intentional, see
+            #$PurposefulAction and #$performedBy.</rdfs:comment>
+        <rdf:type rdf:resource="#AnimalCapabilityType"/>
+        <rdf:type rdf:resource="#SaffronSituationTypeConstant"/>
+        <rdf:type rdf:resource="#CDETagTranslationConstant"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="#Event"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="Amplifier">
+        <rdfs:comment>A collection of devices; a subset of
+            ElectronicComponent. Each instance of Amplifier is a device
+            used for   increasing the amplitude of a signal passing
+            through it.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ManufacturedGoods"/>
+        <rdfs:subClassOf rdf:resource="#ElectronicComponent"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="AudioAmplifierComponent">
+        <rdfs:comment>Electronic Device which amplifies electrical audio signals.</rdfs:comment>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#Amplifier"/>
+        <rdfs:subClassOf rdf:resource="#ConsumerAudioVideoComponent"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="AudioCommunicating">
+        <rdfs:comment>A specialization of #$Communicating.  Each
+            instance of #$AudioCommunicating is a transmission of
+            sound-borne information between two (or more) agents.
+            Specializations of #$AudioCommunicating include
+            #$SpokenCommunicating and #$MusicalCommunicating.</rdfs:comment>
+        <rdf:type rdf:resource="#TemporalStuffType"/>
+        <rdfs:subClassOf rdf:resource="#Communicating"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="AudioCrossover">
+        <rdfs:comment>This is the collection of crossovers. A crossover
+            is a piece of #$AudioEquipment  designed to process audio
+            signals in the frequency ranges where different  drivers
+            have frequency overlaps.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#Amplifier"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="AudioRecordedObject">
+        <rdfs:comment>A collection of information bearing objects
+            (IBOs).  Each element of #$AudioRecordedObject is a tangible
+            object (such as an audiocassette tape) that contains audio
+            information.  For mass-produced audio, see #$RecordedSoundProduct.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="AudioVisualReceiver">
+        <rdfs:comment>This is the collection of single-unit  receivers
+            for #$HomeTheaterSystems.</rdfs:comment>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#Receiver-AudioComponent"/>
+        <rdfs:subClassOf rdf:resource="#VideoReceiverComponent"/>
+        <rdfs:subClassOf rdf:resource="#ElectronicDevice"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="BidirectionalDataStream">
+        <rdfs:comment>This generic data type encapsluates the concept of
+            bidirectional streams (allowing both input and output) in
+            programming languages.</rdfs:comment>
+        <rdf:type rdf:resource="#ComputerDataType"/>
+        <rdfs:subClassOf rdf:resource="#DataStream"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="CellularTelephone">
+        <rdfs:comment>Cellular mobile telephone unit usually used in automobiles</rdfs:comment>
+        <rdf:type rdf:resource="#ContactLocationType"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ManufacturedGoods"/>
+        <rdfs:subClassOf rdf:resource="#WirelessCommunicationDevice"/>
+        <rdfs:subClassOf rdf:resource="#PersonalDevice"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="Communicating">
+        <rdfs:comment>A specialization of #$PurposefulAction and
+            characterized by one or more #$InformationTransferEvent
+            sub-events.  Each instance of #$Communicating is an event in
+            which the transfer of information between or among agents is
+            a focal action; communicating is the main purpose and/or
+            goal in the event.  That may be contrasted with events which
+            involve communication but wherein the focus is different,
+            e.g., playing cards (wherein the progressive actions -- and
+            winning -- of the game are focal).  Since #$Communicating is
+            a specialization of #$PurposefulAction, each #$Communicating
+            event must be intentional on the part of the
+            #$communicatorOfInfo; it may or may not be intentional on
+            the part of the agent playing the #$infoCommunicatedTo role.
+            Hence, a speaker on a soapbox haranguing an indifferent
+            crowd is performing an instance of #$Communicating.  In
+            contrast, Juliet soliloquizing on her balcony, unaware that
+            Romeo is listening to her, is not #$Communicating; rather
+            Romeo (and Juliet, unaware) are engaged in an
+            #$Eavesdropping. Communicating may be either a one-way or a
+            two-way transfer of information (cf.
+            #$CommunicationAct-Single, #$MultiDirectionalCommunication).
+            Every event belonging to #$Communicating contains at least
+            one transfer of information between at least two agents who
+            participate in the event.  (Note that the latter requirement
+            excludes reading and writing from #$Communicating, when
+            those events are just the private accessing or generating of
+            information.)  Communicating may be specialized in various
+            ways, such as, by the method or medium used (e.g.,
+            #$AudioCommunicating, #$NonVerbalCommunicating,
+            #$FaceToFacePresenceCommunicating); by the type of
+            information involved (e.g., #$MakingAnAgreement); by the
+            purpose of the communication (e.g., #$Teaching,
+            #$Negotiating); by the agents involved (e.g.,
+            #$IntraOrganizationCommunication, #$StageProduction).
+            Examples of #$Communicating include a symphony performance,
+            an email message, a telephone call, a speech, a handshake,
+            issuing a traffic ticket -- all of which normally, and
+            focally, involve communication between two or more agents.</rdfs:comment>
+        <rdf:type rdf:resource="#TemporalStuffType"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="CommunicationDevice">
+        <rdfs:comment>The subcollection of #$PhysicalDevice that
+            contains all instances that are intended to be the
+            #$deviceUsed in a #$Communicating (one way or
+            bidirectional). Examples include #$RadioReceiver,
+            #$Telephone, etc.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#PhysicalDevice"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="CompactDisc-Generic">
+        <rdfs:comment>The collection of generic CompactDiscs often (but
+            not  necessarily) used for digital information storage,
+            whether audio,  video or other.  Subcollections include
+            #$CompactDisc-Audio,  #$CD-ROM, #$CD-R, #$CD-RW, etc..</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#DiscStorageMedium"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="CompactStereoSystem">
+        <rdfs:comment>A subcollection of #$HomeAudioSystem. Instances of
+            #$CompactStereoSystem are on the physically small and
+            inexpensive end.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ManufacturedGoods"/>
+        <rdfs:subClassOf rdf:resource="#HomeAudioSystem"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="ComputerActivity">
+        <rdfs:comment>A collection of events, and a specialization of
+            both #$Action and #$PhysicalEvent. In each instance of
+            #$ComputerActivity, at least one instance of #$Computer is
+            somehow involved. An instance of #$Person may or may not be
+            involved. (Instances of #$ComputerActivity where no #$Person
+            is involved fall under the more specialized collection
+            #$ComputerProcessRunning.) A wide variety of activities
+            falls into this collection - from sending an email (see the
+            more specialized collection #$EMailSending), to scanning a
+            set of ports (see #$PortScan), to a computer crash (see
+            #$ComputerCrashing). A situation where someone took to a
+            computer with an axe would also fulfil the requirements for
+            being an instance of #$ComputerActivity, though (hopefully)
+            in an unusual and &apos;degenerate&apos; sense.</rdfs:comment>
+        <rdf:type rdf:resource="#TemporalStuffType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#PhysicalEvent"/>
+        <rdfs:subClassOf rdf:resource="#Action"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="ComputerDisk">
+        <rdfs:comment>A spec of #$InformationStorageMedia, this is the
+            collection of all disks used for storage of information.
+            This includes floppy disks as well as hard disks.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#DiscStorageMedium"/>
+        <rdfs:subClassOf rdf:resource="#ComputerInformationStorageMedia"/>
+        <rdfs:subClassOf rdf:resource="#ComputerHardwareItem"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="ComputerHardwareComponent">
+        <rdfs:comment></rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ComputerHardwareItem"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="ComputerHardwareItem">
+        <rdfs:comment>A specialization of #$ElectronicDevice and
+            #$ComputerProduct. Each instance of this collection is
+            either an entire #$Computer, or a device used with or in
+            computers to accomplish some computing-related task (for
+            instance, computer terminals, printers, keyboards, etc.).</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ManufacturedGoods"/>
+        <rdfs:subClassOf rdf:resource="#ElectronicDevice"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="ComputerInformationStorageMedia">
+        <rdfs:comment>#$ComputerInformationStorageMedia is the subset of
+            #$InformationStorageMedia whose instances are all and only
+            those entities on which instances of #$ComputerFileCopy may
+            be stored.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingStuffType"/>
+        <rdf:type rdf:resource="#ObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#InformationStorageMedia"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="ConsumerAudioVideoComponent">
+        <rdfs:comment>The collection of all
+            #$ElectronicHouseholdAppliances that are sold to be
+            components in a home audio or audio-video system. Instances
+            of #$ConsumerAudioVideoComponent are generally black in
+            color and of a fairly uniform size, so they are visually
+            inconspicuous and can be installed in standard cabinets.
+            They are generally connected to one another using patch cords.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ElectronicHouseholdAppliance"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="DataSending">
+        <rdfs:comment>This is a collection of one-way information
+            transfer events in which information  is sent from some
+            #$informationOrigin to some #$informationDestination.</rdfs:comment>
+        <rdf:type rdf:resource="#TemporalStuffType"/>
+        <rdfs:subClassOf rdf:resource="#InformationTransferPhysicalEvent"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="DataSignaling">
+        <rdfs:comment>This is the collection of all events in which
+            information is passed from a source to a target by
+            non-obvious means.  This is usually done to avoid some form
+            of security monitoring.</rdfs:comment>
+        <rdf:type rdf:resource="#FirstOrderCollection"/>
+        <rdfs:subClassOf rdf:resource="#DataSending"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="DataStream">
+        <rdfs:comment>This generic data type encapsluates the concept of
+            streams in programming languages. This includes all streams,
+            including Input and Output streams, as well as Byte and
+            Character streams.</rdfs:comment>
+        <rdf:type rdf:resource="#ComputerDataType"/>
+        <rdfs:subClassOf rdf:resource="#ProgramObject"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="DecoderProgram">
+        <rdfs:comment>The collection of all #$ComputerProgram-CWs whose
+            purpose         is to perform an #$IBTRecoding with a
+            #$ComputerFileCopy as its         #$informationOrigin and an
+            #$InformationBearingThing containing         the same
+            information as its #$ibtGenerated. See #$EncoderProgram
+            for programs going the other direction.</rdfs:comment>
+        <rdf:type rdf:resource="#ComputerProgramTypeByFunction"/>
+        <rdfs:subClassOf rdf:resource="#UtilityProgram"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="Decoding">
+        <rdfs:comment>The collection of events where some data in an
+            #$InformationBearingThing are transformed from a
+            complex/compressed format to a more usable or natural format.</rdfs:comment>
+        <rdf:type rdf:resource="#TemporalObjectType"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="Device-SingleUser">
+        <rdfs:comment>#$Device-SingleUser is a specialization of
+            #$PhysicalDevice.  Each instance of #$Device-SingleUser is a
+            device that typically has exactly one (i.e., one and only
+            one)  user  who is the only individual who derives the value
+            of its single function at a single time.  A screwdriver (an
+            instance of  #$Screwdriver) is a #$Device-SingleUser, but a
+            grand piano (an instance of #$GrandPiano) is not.  A
+            borderline non-example is a multiple-passenger car ---
+            although only one person operates it, several can  use  it
+            at once, i.e. derive the value of its primary function
+            (transportation).  So a multiple-passenger car is not a
+            #$Device-SingleUser. A borderline example is a telephone --
+            although it requires two or more users (each on telephones)
+            for meaningful use, each phone generally has just one user
+            at a time.  So a telephone is a #$Device-SingleUser, but a
+            telephone-circuit is not.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdfs:subClassOf rdf:resource="#PhysicalDevice"/>
+    </owl:Class>  
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="Disc">
+        <rdfs:comment>A specialization of #$Cylinder. Each instance of
+            #$Disc3DShape is a cylinder with a height much less than the
+            radius of its base.</rdfs:comment>
+        <rdf:type rdf:resource="#ThreeDimensionalShapeType"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="DiscStorageMedium">
+        <rdfs:comment>A spec of #$InformationStorageMedia, this is the
+            collection of all disks used for storage of information.
+            This includes floppy disks as well as hard disks.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ManufacturedGoods"/>
+        <rdfs:subClassOf rdf:resource="#Disc"/>
+        <rdfs:subClassOf rdf:resource="#InformationStorageMedia"/>
+        <rdfs:subClassOf rdf:resource="#PhysicalDevice"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="DVD-Disk">
+        <rdfs:comment>A collection of #$Disks. Each #$DVD-Disk is a
+            round, shiny disk similar in shape and appearance to a
+            #$CompactDisc-Generic, but with a greater storage capacity
+            (several gigabytes, depending on whether it is single- or
+            double-sided and how many layers of information are encoded
+            on each side). #$DVD-Disks are currently (1998) used for
+            distribution and playback of #$Movie-CWs and multimedia
+            software too large for #$CD-ROMs, and for backup of computer #$HardDiskDrives.</rdfs:comment>
+        <rdf:type rdf:resource="#ComputerDiskType"/>
+        <rdfs:subClassOf rdf:resource="#ComputerDisk"/>
+        <rdfs:subClassOf rdf:resource="#SinglePurposeDevice"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="ElectricalComponent">
+        <rdfs:comment>A specialization of both #$ElectricalDevice and
+            #$PhysicalPartOfObject.  Each instance of
+            #$ElectricalComponent is an #$ElectricalDevice which is
+            normally considered to be a part of some larger, more
+            clearly distinguished #$PhysicalDevice (for example, clearly
+            distinguished in the sense that it is sold or moved as a
+            unit).  Each instance of  #$ElectricalComponent must be
+            connected with other parts in order to perform its #$primaryFunction.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ElectricalDevice"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="ElectricalDevice">
+        <rdfs:comment>A specialization of #$PoweredDevice.  Each
+            instance of #$ElectricalDevice is a device that requires an
+            input of electrical current (as its #$energySource) in order
+            to perform its intended function(s).  Instances of
+            #$ElectricalDevice include both complex devices (for
+            example, instances of the collections #$StereoSystem or
+            #$Computer) and simpler ones (for example, instances of the
+            collection #$ElectricalComponent).</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#PoweredDevice"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="ElectricalHouseholdAppliance">
+        <rdfs:comment>Electric-powered Household Appliances</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ElectricalDevice"/>
+        <rdfs:subClassOf rdf:resource="#HouseholdAppliance"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="ElectronicComponent">
+        <rdfs:comment>A collection of devices; a subset of
+            #$ElectronicDevice.  An #$ElectronicComponent is a device
+            which is normally considered a part to another device (which
+            in turn is a more meaningful entity, at least in this
+            context.  `More meaningful&apos; might mean that the larger
+            device is sold, moved, named,... as a unit.)   An electronic
+            component needs to be connected with other parts in order to
+            perform its #$primaryFunction.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ElectricalComponent"/>
+        <rdfs:subClassOf rdf:resource="#ElectronicDevice"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="ElectronicDevice">
+        <rdfs:comment>#$ElectronicDevice is a specialization of
+            #$ElectricalDevice.  Each instance of #$ElectronicDevice is
+            a device that uses electronic circuitry; more specifically,
+            a device in which electricity passes through a vacuum or
+            semiconductor.  Notable specializations of
+            #$ElectronicDevice include #$Telephone, #$VideoCamera, and #$Computer.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ElectricalDevice"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="ElectronicHouseholdAppliance">
+        <rdfs:comment>A collection of electronic devices which are also
+            household appliances.  An instance of
+            #$ElectronicHouseholdAppliance is a #$HouseholdAppliance
+            which is electrically powered and controlled.  Common
+            instances of #$ElectronicHouseholdAppliance belong to the
+            subsets #$HomeVideoGameMachine, #$TelevisionSet,
+            #$AnsweringMachine, #$Telephone, #$LaserDiscPlayer, etc.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ElectricalHouseholdAppliance"/>
+        <rdfs:subClassOf rdf:resource="#ElectronicDevice"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="EncoderProgram">
+        <rdfs:comment>The collection of all #$ComputerProgram-CWs whose
+            purpose         is to perform an #$IBTRecoding with an
+            #$InformationBearingThing         as its #$informationOrigin
+            and a #$ComputerFileCopy containing the         same
+            information as its #$fileCopyCreated. See #$DecoderProgram
+            for programs going the other direction.</rdfs:comment>
+        <rdf:type rdf:resource="#ComputerProgramTypeByFunction"/>
+        <rdfs:subClassOf rdf:resource="#UtilityProgram"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="Encoding">
+        <rdfs:comment>The collection of events where some data in an
+            #$InformationBearingThing are tranformed from a more
+            &apos;raw&apos; or natural format to a more
+            compressed/complex format.</rdfs:comment>
+        <rdf:type rdf:resource="#TemporalObjectType"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="Equalizer-AudioComponent">
+        <rdfs:comment></rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ManufacturedGoods"/>
+        <rdfs:subClassOf rdf:resource="#AudioSystemComponent"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="Event">
+        <rdfs:comment>An important specialization of #$Situation and
+            thus also of #$IntangibleIndividual and
+            #$TemporallyExistingThing (qq.v).  Each instance of #$Event
+            is a dynamic situation in which the state of the world
+            changes; each instance is something one would say  happens .
+            Events are intangible because they are changes per se, not
+            tangible objects that effect and undergo changes.    Notable
+            specializations of #$Event include #$Event-Localized,
+            #$PhysicalEvent, #$Action, and #$GeneralizedTransfer.
+            #$Events should not be confused with #$TimeIntervals (q.v.).
+            The temporal bounds of events are delineated by time
+            intervals, but in contrast to many events time intervals
+            have no spatial location or extent.</rdfs:comment>
+        <rdf:type rdf:resource="#TemporalStuffType"/>
+        <rdf:type rdf:resource="#TTT-EntityType"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="GeneralizedTransfer">
+        <rdfs:comment>A specialization of #$Event.  Each instance of
+            #$GeneralizedTransfer is an event in which something
+            (tangible or intangible) is transferred from one
+            `place&apos; to another.  #$GeneralizedTransfer includes
+            changes in physical location, in ownership or possession,
+            transfer of information, and propagation of wave phenomena
+            through space.  See also the related predicate
+            #$transferredThing, and the specializations of this collection.</rdfs:comment>
+        <rdf:type rdf:resource="#SaffronSituationTypeConstant"/>
+        <rdf:type rdf:resource="#CDETagTranslationConstant"/>
+        <rdf:type rdf:resource="#DurativeEventType"/>
+        <rdf:type rdf:resource="#TemporalStuffType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#Event"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="HomeTheaterSystem">
+        <rdfs:comment>This is the collection of home theater  systems.
+            These are basically large-screen television sets souped-up
+            with  some sort of hi-fi sound system.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#MechanicalDevice"/>
+        <rdfs:subClassOf rdf:resource="#ElectricalDevice"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="HomeVideoGameMachine">
+        <rdfs:comment>This is the device on which we affectionately play
+            video games like Space Invaders or Asteroids.  This machine
+            is hooked up to a televison set</rdfs:comment>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ManufacturedGoods"/>
+        <rdfs:subClassOf rdf:resource="#ElectronicHouseholdAppliance"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="InformationStorageMedia">
+        <rdfs:comment>Items which can have (but don&apos;t necessarily
+            have) information stored onto them that can be retrieved later.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingStuffType"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="InformationTransferEvent">
+        <rdfs:comment>A specialization of #$GeneralizedTransfer.  Each
+            instance of #$InformationTransferEvent is an event in which
+            information is transferred from a source
+            (#$informationOrigin) to one or more destinations
+            (#$informationDestination), where the source and the various
+            destinations are either intelligent agents or
+            #$InformationBearingThings (IBTs).  Examples include reading
+            a book (transfer of information from the book to the
+            reader), saying something to someone (transfer of
+            information from the speaker to the listener), machine
+            translation (transfer of information from an encoded IBT in
+            the source language to an encoded IBT in the target
+            language), OCR scanning (transfer of information from a
+            visual information source to another IBT in a different
+            format), carving initials in a tree (transfer of information
+            from an agent to an IBT),  and making a speech (transfer of
+            information from an agent to other agents).  See also the
+            specialization #$InformationTransferPhysicalEvent.</rdfs:comment>
+        <rdf:type rdf:resource="#TemporalStuffType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#GeneralizedTransfer"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="InformationTransferEvent-Electronic">
+        <rdfs:comment>The collection of all events in which information
+            is transferred electronically. Examples include all
+            instances of #$TelephoneConversation, #$EMailSending, and #$PuttingUpAWebsite.</rdfs:comment>
+        <rdf:type rdf:resource="#TemporalStuffType"/>
+        <rdfs:subClassOf rdf:resource="#InformationTransferPhysicalEvent"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="InformationTransferPhysicalEvent">
+        <rdfs:comment>A specialization of #$InformationTransferEvent
+            (q.v.) and #$PhysicalEvent each instance of which involves
+            at least one #$PartiallyTangible, either as its source (see
+            #$informationOrigin), as (at least one of) its
+            destination(s) (see #$informationDestination), or both.  (A
+            partially tangible source or destination, note, must
+            pre-exist the transfer event.)  Indeed, most if not all
+            actual information transfer events are physical events; but
+            #$InformationTransferPhysicalEvent does in principle exclude
+            those such as telepathic communications between disembodied
+            spirits or other #$Agent-Intangibles.</rdfs:comment>
+        <rdf:type rdf:resource="#TemporalStuffType"/>
+        <rdfs:subClassOf rdf:resource="#PhysicalEvent"/>
+        <rdfs:subClassOf rdf:resource="#InformationTransferEvent"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="InputDataStream">
+        <rdfs:comment>This generic data type encapsluates the concept of
+            input streams in programming languages.</rdfs:comment>
+        <rdf:type rdf:resource="#ComputerDataType"/>
+        <rdfs:subClassOf rdf:resource="#DataStream"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="Jukebox">
+        <rdfs:comment>The collection of all jukeboxes. A #$Jukebox is a
+            coin-operated CD- or record-playing machine, usually found
+            in restaurants or bars.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ManufacturedGoods"/>
+        <rdfs:subClassOf rdf:resource="#AudioEquipment"/>
+        <rdfs:subClassOf rdf:resource="#MediaPlayingDevice"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="ManufacturedGoods">
+        <rdfs:comment>The collection of all #$Artifacts that are made or
+            processed in large-scale industrial operations for
+            distribution (normally sale) to agents outside the
+            manufacturing organization.  This includes manufactured
+            stuff, e.g. Finlandia vodka; refined ore, e.g. iron;
+            otherwise procesed natural material, e.g. cut diamonds, as
+            well as manufactured objects.  This collection excludes
+            handicrafts; privately made stuff, e.g. moonshine; and other
+            artifacts produced by one or a few people on a small scale.</rdfs:comment>
+        <rdf:type rdf:resource="#TemporalObjectType"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="MechanicalDevice">
+        <rdfs:comment>A specialization of #$PhysicalDevice.  Each
+            instance of #$MechanicalDevice is a physical device which
+            has at least one part that moves with respect to another one
+            of its parts.  Thus a spoon is not an instance of
+            #$MechanicalDevice, but a pair of scissors is, as are more
+            complex devices such as vacuum cleaners and the #$SpaceShuttleChallenger.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#PhysicalDevice"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="Mixer-AudioComponent">
+        <rdfs:comment>A collection of audio equipment. Each instance of
+            Mixer-AudioComponent accepts two or more inputs from audio
+            devices,   microphones, etc. and has one or more output
+            signal combining multiple   inputs.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ManufacturedGoods"/>
+        <rdfs:subClassOf rdf:resource="#AudioSystemComponent"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="MusicVideoCopy">
+        <rdfs:comment>A #$VideoRecordedObject whose playings (see
+            #$performanceOfIBT) have an audio portion, consisting of a
+            #$Song-Sung, and a video portion typically consisting of
+            images of the performers dancing, singing, playing
+            instruments, etc. Made for sale or television broadcast.</rdfs:comment>
+        <rdf:type rdf:resource="#TemporalStuffType"/>
+        <rdf:type rdf:resource="#ObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#VideoRecordedObject"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="OutputDataStream">
+        <rdfs:comment>This generic data type encapsluates the concept of
+            output streams in programming languages.</rdfs:comment>
+        <rdf:type rdf:resource="#ComputerDataType"/>
+        <rdfs:subClassOf rdf:resource="#DataStream"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="PackagedAudioHomeTheater">
+        <rdfs:comment>A subcollection of #$HomeAudioSystem. Instances of
+            #$PackagedAudioHomeTheatre are on the expensive and
+            physically large end. They typically have surround sound
+            speakers and a logic processor for DVD</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ManufacturedGoods"/>
+        <rdfs:subClassOf rdf:resource="#HomeAudioSystem"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="PersonalAudioPlayer">
+        <rdfs:comment>#$PersonalAudioPlayer is a collection of
+            #$PortableAudioEquipment that is designed for use by a
+            single person using #$Headphones. Elements of
+            #$PortableAudioEquipment are designed to be both compact in
+            size and light in weight. As a result, they can be used in
+            activities in which they are strapped to the user&apos;s
+            body, e.g., during jogging and exercise workouts.</rdfs:comment>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#Device-SingleUser"/>
+        <rdfs:subClassOf rdf:resource="#PortableAudioEquipment"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="PersonalDevice">
+        <rdfs:comment>The collection of devices that are controlled and
+            primarily used by one person, and which are often carried by
+            the person rather than permanently situated in a particular
+            #$HumanOccupationConstruct. Not included are household
+            devices, which are often shared by more than one dweller in
+            a #$HumanResidence. Also not included are instances of
+            #$BusinessMachine, as these are often shared by multiple
+            coworkers. Specializations include #$Pager, #$Wallet and
+            #$CellularTelephone. #$PersonalDevice differs from
+            #$Device-SingleUser in that an instance of the latter can
+            typically be shared among more than one user, as long as it
+            is not used by both users simultaneously. Neither
+            #$PersonalComputer nor #$LaptopComputer are specializations
+            of #$PersonalDevice (both are often shared by multiple
+            people, though not simultaneously), but certain instances of
+            LaptopComputer might also be instances of #$PersonalDevice.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdfs:subClassOf rdf:resource="#PortableObject"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="PersonalDigitalAudioPlayer">
+        <rdfs:comment>A subcollection of #$PersonalAudioPlayer.
+            Instances of #$PersonalDigitalAudioPlayer are designed to
+            convert instances of #$ComputerSoundFile (not stored on
+            instances of #$CompactDisc-Generic) into instances of #$AudibleSound.</rdfs:comment>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#PersonalAudioPlayer"/>
+        <rdfs:subClassOf rdf:resource="#PersonalDevice"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="PhysicalDevice">
+        <rdfs:comment>A specialization of #$Artifact and
+            #$ObjectWithUse. Each instance of #$PhysicalDevice is an
+            artifact with a relatively rigid, set shape, designed for a
+            specific use or to perform a specific function.
+            Specializations of #$PhysicalDevice thus include (among
+            others) #$RoadVehicle, #$Motorboat, #$HandTool, and
+            #$PlumbingFixture.  Note that artifacts which are only to be
+            viewed or can only be  used  in a very loose or metaphorical
+            sense, such as instances of #$Buoy, #$Sculpture,
+            #$FlowerBed, or #$Billboard, are _not_ instances of
+            #$PhysicalDevice.  Moreover, artifacts which have a specific
+            use or function, but which do not have a relatively rigid,
+            set shape are _not_ instances of #$PhysicalDevice; for this
+            reason, neither #$GasolineFuel nor #$AntiFreeze are
+            specializations of #$PhysicalDevice.</rdfs:comment>
+        <rdf:type rdf:resource="#TemporalStuffType"/>
+        <rdf:type rdf:resource="#ObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#SinglePurposeDevice"/>
+    </owl:Class>
+
+    <owl:Class rdf:ID="PhysicalEvent">
+        <rdfs:comment>A specialization of #$Event-Localized.  Each
+            instance of #$PhysicalEvent is a spatially localized event
+            involving one or more physical objects or stuffs.
+            #$PhysicalEvents typically involve interaction among
+            #$PartiallyTangibles.  But note that a physical event might
+            consist in the creation, destruction, movement, or a change
+            in some physical feature of a single salient physical
+            object.  (See #$PhysicalCreationEvent,
+            #$PhysicalDestructionEvent, #$MovementEvent, and
+            #$IntrinsicStateChangeEvent.)  For a contrasting (though not
+            necessarily disjoint) collection, see #$StrictlyMentalEvent.
+            For events that have both physical and mental components,
+            see the collection #$CompositePhysicalAndMentalEvent.</rdfs:comment>
+        <rdf:type rdf:resource="#TemporalStuffType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#Event-Localized"/>
+        <rdfs:subClassOf rdf:resource="#PhysicalSituation"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="PoweredDevice">
+        <rdfs:comment>A specialization of #$PhysicalDevice.  Each
+            instance of #$PoweredDevice is a device that requires some
+            power input in order to perform its intended function(s).
+            The power supplied might be muscle power, kinetic energy,
+            electricity, fuel-generated, and so on.  Note that
+            #$PoweredDevice and #$NonPoweredDevice partition the
+            collection #$PhysicalDevice.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#PhysicalDevice"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="ProgramObject">
+        <rdfs:comment>A specialization of #$ComputerAIS. #$ProgramObject
+            is the collection of all data structures that are explicitly
+            referenced in computer programs. All data types are
+            considered to be specializations of this collection.</rdfs:comment>
+        <rdf:type rdf:resource="#ComputerDataType"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="RadioReceiver">
+        <rdfs:comment>The device used to receive transmissions broadcast
+            in radio frequencies (does not include radio transmitters).</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#WirelessCommunicationDevice"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="SatelliteTVReceiver">
+        <rdfs:comment>The collection of all satellite television
+            receivers. Instances are generally black boxes with remote
+            controls that take as input a signal from a
+            #$SatelliteTVAntenna, tune in a channel, and pass video and
+            audio signals out to a #$TelevisionSet,
+            #$Receiver-AudioComponent, etc.</rdfs:comment>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ManufacturedGoods"/>
+        <rdfs:subClassOf rdf:resource="#ConsumerAudioVideoComponent"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="SinglePurposeDevice">
+        <rdfs:comment>A collection of devices each of which has a single
+            #$primaryFunction.   Each instance of #$SinglePurposeDevice
+            may have more than one function, but will have only one
+            _primary_ function.  For example, a car is a single purpose
+            device because it has the primary function of providing
+            transportation.  Of course, a car can provide shelter as
+            well as transportation; but a convertible with a badly torn
+            roof still functions as a car (because its primary function
+            is transportation) even though it does not function as much
+            of a shelter.  It is also possible for a
+            #$SinglePurposeDevice to have other functions associated
+            with it, even though they are not functions of that device
+            per se.  For example, if a car has a cigarette lighter, a
+            clock, etc., those parts have their own functions, which are
+            performed in the car and enjoyed by the users of the car
+            while they are using the car.  However, the functions of
+            those devices (lighting cigarettes and telling time) are
+            generally not considered to be the functions of the car
+            itself.  If someone utters the sentence `Fred used his car
+            today&apos; we would guess that Fred drove/rode somewhere in
+            the car, and would be surprised/amused/annoyed/confused if
+            we later discover that the speaker meant only that Fred used
+            the car&apos;s lighter and the clock but didn&apos;t travel
+            somewhere by car.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdfs:subClassOf rdf:resource="#PhysicalDevice"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="System">
+        <rdfs:comment>The collection of all systems -- complex objects
+            that decompose into simpler components that, by virtue of
+            the relations among them, form a recognizable, cohesive
+            whole.  Notable specializations include #$PathSystem and
+            #$FunctionalSystem.  The components of an instance of
+            #$System can be identified using #$systemComponents.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="TelevisionSet">
+        <rdfs:comment>A television set</rdfs:comment>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ManufacturedGoods"/>
+        <rdfs:subClassOf rdf:resource="#ElectronicHouseholdAppliance"/>
+        <rdfs:subClassOf rdf:resource="#CommunicationDevice"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="TelevisionTuner">
+        <rdfs:comment>Television tuners do for television signals what
+            radio tuners do for radio broadcasts.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#VideoReceiverComponent"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="Transmitter">
+        <rdfs:comment>Device used for transmitting radio or tv signals.</rdfs:comment>
+        <guid>c080d3f8-9c29-11b1-9dad-c379636f7270</guid>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#WirelessCommunicationDevice"/>
+        <rdfs:subClassOf rdf:resource="#ElectronicComponent"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="UtilityProgram">
+        <rdfs:comment>Software which allows a user to manage a variety
+            of aspects of their computer, such as decompressing files,
+            memory management, hard drive scanning, anti-viral programs,
+            etc. See also #$AdministrationProgram, #$BackEndUtilityProgram.</rdfs:comment>
+        <rdf:type rdf:resource="#ComputerProgramTypeByFunction"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="VideoRecordedObject">
+        <rdfs:comment>A collection of information bearing objects
+            (IBOs).  Each element of #$VideoRecordedObject is a tangible
+            object (such as a videotape) that contains visual
+            information.  For mass-produced videos, see #$RecordedVideoProduct.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="WirelessCommunicationDevice">
+        <rdfs:comment>The collection of   #$CommunicationDevices in
+            which the communication signals are either not transmitted
+            or not received entirely over a wire.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#CommunicationDevice"/>
+        <rdfs:subClassOf rdf:resource="#ElectronicDevice"/>
+    </owl:Class>
+
+    <!-- Audio Classes -->
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="AudioEquipment">
+        <rdfs:comment>A collection of electronic devices.  An instance
+            of #$AudioEquipment is a device that may be used in audio
+            recording, playback, amplification, and/or reception.  This
+            collection doesn&apos;t include musical instruments.  It
+            does include both self-contained systems, e.g. boom boxes,
+            and individual stereo components, such as microphones,
+            amplifiers, etc.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ElectronicDevice"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="AudioSpeaker">
+        <rdfs:comment>The electrical component used to convey sound</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ManufacturedGoods"/>
+        <rdfs:subClassOf rdf:resource="#ElectricalComponent"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="AudioSystem">
+        <rdfs:comment>The collection of all audio systems, characterized
+            by having an audio amplifier, some kind of speaker (which
+            may be headphones), and some sound producing component such
+            as a radio receiver or tape deck mechanism.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#AudioEquipment"/>
+        <rdfs:subClassOf rdf:resource="#System"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="AudioSystemComponent">
+        <rdfs:comment>The collection of audio components intended for
+            use in an #$AudioSystem.  Each instance of #$AudioSystem has
+            several instances of #$AudioSystemComponent as
+            #$physicalParts.  No instance of #$AudioSystemComponent is
+            itself an instance of #$AudioSystem.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#AudioEquipment"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="CompactDisc-Audio">
+        <rdfs:comment>A specialization of #$CompactDisc-Generic.  Each
+            instance of this collection is designed to be used for
+            storing audio in the CD format, which is most commonly used
+            for music.</rdfs:comment>
+        <rdf:type rdf:resource="#IBTContentType"/>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#CompactDisc-Generic"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="Headphones">
+        <rdfs:comment>The audio devices put very close to the ears to
+            permit personal listening</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ManufacturedGoods"/>
+        <rdfs:subClassOf rdf:resource="#ElectricalComponent"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="HomeAudioEquipment">
+        <rdfs:comment>The subcollection of #$AudioEquipment instances of
+            which are designed to be used in the home.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#AudioEquipment"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="HomeAudioReceiver">
+        <rdfs:comment>A subcollection of both  #$Receiver-AudioComponent
+            and #$HomeAudioSystemComponent. Instances of
+            #$HomeAudioReceiver are meant to be components of instances
+            of #$HomeAudioSystem.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#Receiver-AudioComponent"/>
+        <rdfs:subClassOf rdf:resource="#HomeAudioSystemComponent"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="HomeAudioSystem">
+        <rdfs:comment>The collection of #$AudioSystems designed and
+            marketed for use in a home or office setting. Elements are
+            usually assembled and left in a stationary position. Unlike
+            elements of #$PortableAudioEquipment, they cannot be easily
+            transported nor operated while in motion, although their
+            positions in a room can be changed. Each instance of
+            #$HomeAudioSystem has several instances of
+            #$HomeAudioSystemComponent as #$physicalParts. No instance
+            of #$HomeAudioSystemComponent is itself an instance of #$HomeAudioSystem.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#AudioSystem"/>
+        <rdfs:subClassOf rdf:resource="#HomeAudioEquipment"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="HomeAudioSystemComponent">
+        <rdfs:comment>The collection of #$AudioSystemComponents designed
+            and marketed for use in a home or office setting. Elements
+            of #$HomeAudioSystemComponent are typically purchased
+            separately and assembled to form a #$HomeAudioSystem. Once
+            assembled, the system is left in a stationary position for
+            long periods of time. Unlike elements of
+            #$PortableAudioEquipment, elements of
+            #$HomeAudioSystemComponent cannot be easily transported nor
+            operated while in motion, although their positions in a room
+            can be changed. Thus, with respect to their relatively fixed
+            positions once configured into a #$HomeAudioSystem, elements
+            of #$HomeAudioSystemComponent are more like furniture than
+            hand-held devices.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#AudioSystemComponent"/>
+        <rdfs:subClassOf rdf:resource="#HomeAudioEquipment"/>
+    </owl:Class>
+
+    <owl:Class rdf:ID="HomeStereoSpeaker">
+        <rdfs:comment>A subcollection of both #$HomeAudioSystemComponent
+            and #$StereoSpeaker. Instances of #$HomeStereoSpeaker are
+            designed to output sound as components of instances of  #$HomeAudioSystem.</rdfs:comment>
+        <guid>bf61ecd9-9c29-11b1-9dad-c379636f7270</guid>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#StereoSpeaker"/>
+        <rdfs:subClassOf rdf:resource="#HomeAudioSystemComponent"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="MiniAudioSystem">
+        <rdfs:comment></rdfs:comment>
+        <guid>c0e75e9c-9c29-11b1-9dad-c379636f7270</guid>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#AudioSystem"/>
+    </owl:Class>
+
+    <owl:Class rdf:ID="PortableAudioEquipment">
+        <rdfs:comment>The collection of #$AudioSystems which are also
+            #$PortableObjects and#$SelfPoweredDevices. What makes an
+            instance of #$AudioSystem portable or mobile is that it is
+            both lightweight enough to be carried easily by a #$Person
+            and  can be operated without requiring that it be plugged
+            into a external power source. A device can be an instance of
+            #$PortableAudioEquipment even if it can be operated by an
+            external power source, as long as it is also an instance of
+            #$SelfPoweredDevice. A positive example is a #$Walkman. A
+            negative example is a #$CompactDiscPlayer that is part of a
+            home entertainmnet audio system (#$HomeAudioSystem).</rdfs:comment>
+        <guid>bf25e778-9c29-11b1-9dad-c379636f7270</guid>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ManufacturedGoods"/>
+        <rdfs:subClassOf rdf:resource="#BatteryPoweredDevice"/>
+        <rdfs:subClassOf rdf:resource="#AudioSystem"/>
+        <rdfs:subClassOf rdf:resource="#PortableObject"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="Radio">
+        <rdfs:comment>A subcollection of #$WirelessCommunicationDevice.
+            Instances of #$Radio convert instances of #$RadioWave into
+            instances of #$AudibleSound.</rdfs:comment>
+        <guid>bf2092e5-9c29-11b1-9dad-c379636f7270</guid>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#AudioSystem"/>
+        <rdfs:subClassOf rdf:resource="#WirelessCommunicationDevice"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="Receiver-AudioComponent">
+        <rdfs:comment>The receiver component of a component stereo
+            system. Other #$AudioSystemComponents outputs feed into the
+            #$Receiver-AudioComponent which in turn drives the #$AudioSpeakers.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#RadioReceiver"/>
+        <rdfs:subClassOf rdf:resource="#ConsumerAudioVideoComponent"/>
+        <rdfs:subClassOf rdf:resource="#AudioSystemComponent"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="StereoSystem">
+        <rdfs:comment>A collection of audio systems. Each instance of
+            StereoSystem is capable of reproducting 2-channel sound.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#AudioSystem"/>
+        <rdfs:subClassOf rdf:resource="#Stereophonic"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="Stereophonic">
+        <rdfs:comment>An attribute of audio or audio-visual components
+            or systems. Any stereo component or system is capable of
+            processing 2-channel sound signals intended for left and
+            right speakers.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdfs:subClassOf rdf:resource="#ElectronicDevice"/>
+    </owl:Class>
+
+    <owl:Class rdf:ID="Subwoofer">
+        <rdfs:comment>A specialized #$StereoSpeaker responsible for
+            producing deep bass.</rdfs:comment>
+        <guid>bef0ddbb-9c29-11b1-9dad-c379636f7270</guid>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#AudioSystemComponent"/>
+        <rdfs:subClassOf rdf:resource="#AudioSpeaker"/>
+    </owl:Class>
+
+    <!-- Visual Display Classes -->
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="ComputerDisplay">
+        <rdfs:comment>A specialization of #$ComputerOutputDevice. Each
+            instance of this collection is a device with which computer
+            output is displayed visually. An important specialization is
+            #$ComputerMonitor-VideoKind, but see also #$DataProjector.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ElectronicDisplayDevice"/>
+        <rdfs:subClassOf rdf:resource="#ComputerOutputDevice"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="ComputerInterfaceDevice">
+        <rdfs:comment>A specialization of #$ElectronicDevice. Each
+            instance of this collection is a device that allows a user
+            to communicate with a #$Computer.  One sigificant
+            specialization of #$ComputerInterfaceDevices is
+            #$ComputerInputDevice -- with its subsets
+            #$ComputerKeyboard, #$Scanner-Optical, #$ComputerMouse, etc.
+            Another is #$ComputerOutputDevice -- with its subsets
+            #$MonitorPort, #$ComputerMonitor-Color, etc.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ComputerHardwareComponent"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="ComputerMonitor-BlackAndWhite">
+        <rdfs:comment></rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ComputerMonitor-VideoKind"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="ComputerMonitor-Color">
+        <rdfs:comment></rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ComputerMonitor-VideoKind"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="ComputerMonitor-VideoKind">
+        <rdfs:comment>Like the screen you are staring at.  Don&apos;t
+            confuse with ComputerDisplay.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ComputerDisplay"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="ComputerOutputDevice">
+        <rdfs:comment>A specialization of #$ComputerInterfaceDevice.
+            Each instance of this collection is an #$ElectronicDevice
+            which delivers information from a computer to its user.</rdfs:comment>
+        <guid>bd590af6-9c29-11b1-9dad-c379636f7270</guid>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ComputerInterfaceDevice"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="ElectronicDisplayDevice">
+        <rdfs:comment>Electronic devices used to display images.  E.g.
+            CRTs and LCDs.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ManufacturedGoods"/>
+        <rdfs:subClassOf rdf:resource="#ElectronicComponent"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="FlatPanelDisplay">
+        <rdfs:comment>A specialization of #$ComputerMonitor-VideoKind.
+            This is the collection of computer monitors that are a few
+            inches deep, rather than the usual depth of more than a foot.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ComputerMonitor-VideoKind"/>
+        <rdfs:subClassOf rdf:resource="#ElectronicDisplayDevice"/>
+    </owl:Class>
+
+    <owl:Class rdf:ID="VideoProjector">
+        <rdfs:comment>Stand alone devices which take inputs from
+            various electronic video sources (S-Video, computer video
+            cards, etc.)   and not #$MovieReels.  Therefore, a negative
+            example would of course be   #$MovieProjector.</rdfs:comment>
+        <guid>c0c82ede-9c29-11b1-9dad-c379636f7270</guid>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ProjectionDisplayDevice"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="VideoReceiverComponent">
+        <rdfs:comment>Electronic Device which receives video signals and
+            decodes them into signals of visual images which can be
+            amplified for display.  See also Television and #$VideoCassetteRecorder</rdfs:comment>
+        <guid>bd589936-9c29-11b1-9dad-c379636f7270</guid>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ManufacturedGoods"/>
+        <rdfs:subClassOf rdf:resource="#ElectronicComponent"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="VideoScreen">
+        <rdfs:comment>A video display screen for a piece of electronic hardware</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ManufacturedGoods"/>
+        <rdfs:subClassOf rdf:resource="#ElectricalComponent"/>
+    </owl:Class>
+
+    <!-- Player Classes -->
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="CDPlayer-AudioComponent">
+        <rdfs:comment>The device used to play compact discs</rdfs:comment>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#CompactDiscPlayer"/>
+        <rdfs:subClassOf rdf:resource="#ConsumerAudioVideoComponent"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="CompactDiscPlayer">
+        <rdfs:comment></rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ManufacturedGoods"/>
+        <rdfs:subClassOf rdf:resource="#AudioEquipment"/>
+        <rdfs:subClassOf rdf:resource="#MediaPlayingDevice"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="DVDPlayer">
+        <rdfs:comment>A #$DVDPlayer is a type of home audio-visual
+            equipment,  for playing #$DVD-Disks. See also #$DVDPlayer-Software.</rdfs:comment>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ManufacturedGoods"/>
+        <rdfs:subClassOf rdf:resource="#ConsumerAudioVideoComponent"/>
+        <rdfs:subClassOf rdf:resource="#MediaPlayingDevice"/>
+    </owl:Class>
+
+    <owl:Class rdf:ID="HomeCDPlayer">
+        <rdfs:comment>A subcollection of both #$CDPlayer-AudioComponent
+            and #$HomeAudioSystemComponent. Instances of #$HomeCDPlayer
+            are designed to be used in the home to play instances of #$CompactDisc-Generic.</rdfs:comment>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#CDPlayer-AudioComponent"/>
+        <rdfs:subClassOf rdf:resource="#HomeAudioSystemComponent"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="LaserDiscPlayer">
+        <rdfs:comment></rdfs:comment>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ManufacturedGoods"/>
+        <rdfs:subClassOf rdf:resource="#ConsumerAudioVideoComponent"/>
+        <rdfs:subClassOf rdf:resource="#MediaPlayingDevice"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="MediaPlayingDevice">
+        <rdfs:comment></rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ElectronicDevice"/>
+        <rdfs:subClassOf rdf:resource="#MechanicalDevice"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="MP3Player">
+        <rdfs:comment>The collection of hardware devices whose primary
+            intended purpose is to play MP3 files.  A computer is not an
+            #$MP3Player (even if that&apos;s all it&apos;s used for)
+            because that was not its primary intended purpose.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ConventionalClassificationType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#ManufacturedGoods"/>
+        <rdfs:subClassOf rdf:resource="#AudioEquipment"/>
+        <rdfs:subClassOf rdf:resource="#MediaPlayingDevice"/>
+        <rdfs:subClassOf rdf:resource="#MP3Player-Generic"/>
+    </owl:Class>
+
+    <!-- All subClassOf associations checked -->
+    <owl:Class rdf:ID="MP3Player-Generic">
+        <rdfs:comment>The collection of all things --- hardware or
+            software --- whose primary intended purpose is to play MP3 files.</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#TemporalThing"/>
+    </owl:Class>
+
+    <owl:Class rdf:ID="PersonalMP3Player">
+        <rdfs:comment>A subcollection of #$PersonalDigitalAudioPlayer.
+            Instances of #$PersonalMP3Player are designed to convert
+            instances of #$MP3File (not stored on instances of
+            #$CompactDisc-Generic) into instances of #$AudibleSound.</rdfs:comment>
+        <guid>bdfae47e-9c29-11b1-9dad-c379636f7270</guid>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#PersonalDigitalAudioPlayer"/>
+        <rdfs:subClassOf rdf:resource="#MP3Player"/>
+    </owl:Class>
+
+    <owl:Class rdf:ID="PersonalRadio">
+        <rdfs:comment>A subcollection of both #$Radio and
+            #$PersonalAudioPlayer. Instances of #$PersonalRadio convert
+            instances of #$RadioWave into instances of #$AudibleSound,
+            and are small and portable enough to use while jogging.</rdfs:comment>
+        <guid>bfa941f2-9c29-11b1-9dad-c379636f7270</guid>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#Radio"/>
+        <rdfs:subClassOf rdf:resource="#PersonalAudioPlayer"/>
+    </owl:Class>
+
+    <owl:Class rdf:ID="PortableCDPlayer">
+        <rdfs:comment></rdfs:comment>
+        <guid>c0fde8de-9c29-11b1-9dad-c379636f7270</guid>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ClarifyingCollectionType"/>
+        <rdfs:subClassOf rdf:resource="#CompactDiscPlayer"/>
+        <rdfs:subClassOf rdf:resource="#PersonalAudioPlayer"/>
+    </owl:Class>
+
+    <owl:Class rdf:ID="PortableObject">
+        <rdfs:comment>A specialization of #$HumanScaleObject.  Each
+            instance of #$PortableObject is a tangible object that is
+            not  fastened down  and is light enough for an average human
+            (or, more to the point, for its average intended user) to
+            move easily.  For many instances of #$PortableObject,
+            portability is important for the fulfillment of their
+            primary functions;  for example, an article of clothing (an
+            instance of #$SomethingToWear),  a hand-guided tool (an
+            instance of #$HandTool), a coin or dollar bill (an instance
+            of #$Currency), or a flashlight (an instance of
+            #$Flashlight) would be pretty useless if they weren&apos;t
+            portable.  In other cases, making a device portable, or
+            making a portable version of a device, simply provides a
+            convenience, as with the subcollections #$PortableTelevision
+            and #$PortableStereoSystem.  Note that #$Tool is not a
+            subcollection of #$PortableObject, since many tools are
+            heavy and/or stationary.  A borderline example of a
+            #$PortableObject would be a heart/lung machine; although the
+            beneficiary of its primary function is in no position to
+            move it around, the physicians and nurses who also are
+            using  it can and do exactly that.  The same goes for a
+            playpen; the kids in it had better _not_ be able to move it
+            around, but the adults who set it up and put them there can
+            and do move it.   A borderline non-example would be a car;
+            even though its user can make it move around, that is more a
+            controlling action than a transporting action --- i.e., the
+            car is doing the transporting in that case, not the driver.
+            A borderline example is a cat; even though it moves under
+            its own power, it is light enough for its owner to pick it
+            up and move it around.  A borderline example is a bed or a
+            dresser; though too heavy to lift, its owners can generally
+            move it around (by sliding, disassembling and reassembling,
+            and so on).</rdfs:comment>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+    </owl:Class>
+
+    <owl:Class rdf:ID="Walkman">
+        <rdfs:comment></rdfs:comment>
+        <guid>c0fdf851-9c29-11b1-9dad-c379636f7270</guid>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ProductTypeByBrand"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdfs:subClassOf rdf:resource="#PersonalAudioPlayer"/>
+        <rdfs:subClassOf rdf:resource="#PortableObject"/>
+        <rdfs:subClassOf rdf:resource="#StereoSystem"/>
+    </owl:Class>
+
+    <owl:Class rdf:ID="Walkman-RadioOnly">
+        <rdfs:comment></rdfs:comment>
+        <guid>c0fdeffb-9c29-11b1-9dad-c379636f7270</guid>
+        <rdf:type rdf:resource="#ExistingObjectType"/>
+        <rdf:type rdf:resource="#ProductTypeByBrand"/>
+        <rdf:type rdf:resource="#ManufacturedGoodsType"/>
+        <rdfs:subClassOf rdf:resource="#PersonalRadio"/>
+        <rdfs:subClassOf rdf:resource="#Walkman"/>
+        <rdfs:subClassOf rdf:resource="#RadioReceiver"/>
+    </owl:Class>
+
+    <!--Object Properties -->
+    <owl:ObjectProperty rdf:ID="decodingDeviceType">
+        <rdfs:comment>This predicate is used to specify the type of
+            device needed for decoding information contained in a
+            particular kind of encoding scheme.  (#$decodingDeviceType
+            SCHEME DEV-TYP) means that DEV-TYP is the type of device
+            required to decode the information encoded with encoding
+            scheme SCHEME.  For example, a telephone is the kind of
+            device needed to decode audio information sent over
+            telephone lines.  A cable TV box is the device type needed
+            to decode cable TV signals.  And so on.  See also #$EncodingSchemeType.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:ID="infoTransferred">
+        <rdfs:comment>A #$BinaryRolePredicate that is used to specify
+            some or all of the meaningful content of a particular
+            transferral of information (see
+            #$InformationTransferEvent).  (#$infoTransferred TRANSFER
+            INFO) means  that INFO is information (see
+            #$AspatialInformationStore) that is  transferred due to
+            TRANSFER.  INFO originates (see #$informationOrigin) from
+            some agent or #$InformationBearingThing (IBT) and, after
+            TRANSFER,  is had by another agent or is contained in
+            another IBT (see  #$informationDestination); INFO may
+            persist in the origin as well.  For example, when I read the
+            front page of the newspaper, some  information about current
+            world events is transferred from the  newspaper to me.</rdfs:comment>
+        <guid>bd652aec-9c29-11b1-9dad-c379636f7270</guid>
+        <rdfs:subPropertyOf rdf:resource="#situationConstituents"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:ID="informationDestination">
+        <rdfs:comment>A specialization of both #$informationTerminal and
+            #$to-Generic that is used to  indicate where information is
+            transferred in a given #$InformationTransferEvent.
+            (#$informationDestination TRANSFER DESTINATION) means that
+            in TRANSFER, the  information being transferred is sent to,
+            given to, or impressed upon DESTINATION. DESTINATION is
+            typically either an #$InformationBearingThing (at least upon
+            the completion of TRANSFER, if not before) or an agent; but
+            note that  in the latter case one would normally use the
+            more specific predicate  #$recipientOfInfo.</rdfs:comment>
+        <guid>bd58a9c5-9c29-11b1-9dad-c379636f7270</guid>
+        <rdfs:subPropertyOf rdf:resource="#to-Generic"/>
+        <rdfs:subPropertyOf rdf:resource="#informationTerminal"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:ID="informationOrigin">
+        <rdfs:comment>A specialization of #$informationTerminal  (q.v.)
+            that is used to indicate the source of information for a
+            particular  #$InformationTransferEvent (q.v.).
+            (#$informationOrigin TRANSFER ORIGIN)  means that the
+            information being transferred in TRANSFER comes from ORIGIN.
+            ORIGIN is either an instance of #$InformationBearingThing or
+            an agent.   Note that if ORIGIN still exists after the
+            ending of TRANSFER, it  presumably also still contains the
+            information that was transferred.</rdfs:comment>
+        <guid>bd5e4f03-9c29-11b1-9dad-c379636f7270</guid>
+        <rdfs:subPropertyOf rdf:resource="#from-Generic"/>
+        <rdfs:subPropertyOf rdf:resource="#informationTerminal"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:ID="informationTerminal">
+        <rdfs:comment>This predicate is used to indicate any instance of
+            #$TemporalThing the plays            the role of either
+            #$informationDestination or #$informationOrigin in any
+            instance of #$InformationTransferEvent, i.e. plays the role
+            of endpoint.  (#$informationTerminal TRANS THING)
+            means the #$TemporalThing THING was either the origin or
+            destination            of the #$InformationTransferEvent TRANS.</rdfs:comment>
+        <guid>be7ebd50-9c29-11b1-9dad-c379636f7270</guid>
+        <rdfs:subPropertyOf rdf:resource="#terminalOfTrans-Generic"/>
+    </owl:ObjectProperty>
+
+</rdf:RDF>

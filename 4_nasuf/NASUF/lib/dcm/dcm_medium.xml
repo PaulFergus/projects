@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:dcm="http://www.livjm.ac.uk/dcm#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:ccpp="http://www.w3.org/2002/11/08-ccpp-schema#" >
+  <rdf:Description rdf:about="http://www.livjm.ac.uk/dcm#power">
+    <dcm:importanceRating>40</dcm:importanceRating>
+    <dcm:statusAssessment>Average</dcm:statusAssessment>
+    <dcm:statusRating>50</dcm:statusRating>
+    <dcm:importanceRanking>4</dcm:importanceRanking>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.livjm.ac.uk/dcm#MyProfile">
+    <ccpp:component>http://www.livjm.ac.uk/dcm#Memory</ccpp:component>
+    <ccpp:component>http://www.livjm.ac.uk/dcm#Bandwidth</ccpp:component>
+    <ccpp:component>http://www.livjm.ac.uk/dcm#CPU</ccpp:component>
+    <ccpp:component>http://www.livjm.ac.uk/dcm#Power</ccpp:component>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.livjm.ac.uk/dcm#Power">
+    <ccpp:defaults>power</ccpp:defaults>
+    <rdf:type>HardwarePlatform</rdf:type>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.livjm.ac.uk/dcm#cpu_load">
+    <dcm:importanceRanking>4</dcm:importanceRanking>
+    <dcm:statusRating>50</dcm:statusRating>
+    <dcm:statusAssessment>Average</dcm:statusAssessment>
+    <dcm:importanceRating>40</dcm:importanceRating>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.livjm.ac.uk/dcm#bandwidth">
+    <dcm:importanceRating>40</dcm:importanceRating>
+    <dcm:statusRating>50</dcm:statusRating>
+    <dcm:importanceRanking>4</dcm:importanceRanking>
+    <dcm:statusAssessment>Average</dcm:statusAssessment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.livjm.ac.uk/dcm#memory">
+    <dcm:statusRating>50</dcm:statusRating>
+    <dcm:importanceRating>40</dcm:importanceRating>
+    <dcm:importanceRanking>4</dcm:importanceRanking>
+    <dcm:statusAssessment>Average</dcm:statusAssessment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.livjm.ac.uk/dcm#CPU">
+    <rdf:type>HardwarePlatform</rdf:type>
+    <ccpp:defaults>cpu_load</ccpp:defaults>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.livjm.ac.uk/dcm#Bandwidth">
+    <ccpp:defaults>cpu_load</ccpp:defaults>
+    <rdf:type>HardwarePlatform</rdf:type>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.livjm.ac.uk/dcm#Memory">
+    <rdf:type>HardwarePlatform</rdf:type>
+    <ccpp:defaults>memory</ccpp:defaults>
+  </rdf:Description>
+</rdf:RDF>

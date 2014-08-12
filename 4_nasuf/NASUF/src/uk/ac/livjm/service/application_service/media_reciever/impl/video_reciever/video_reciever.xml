@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jxta:PipeAdvertisement>
+<jxta:PipeAdvertisement xmlns:jxta="http://jxta.org">
+        <Id>
+                urn:jxta:uuid-59616261646162614E50472050325033C365F9BA08294A5DA69F910AE0D74A3E04
+        </Id>
+        <Type>
+                JxtaUnicast
+        </Type>
+        <Name>
+                VideoRecieverService: urn:jxta:uuid-59616261646162614A7874615032503318827CE9A17F43F1B81DAE9CD49876E503
+        </Name>
+</jxta:PipeAdvertisement>
+

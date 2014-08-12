@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:base="http://www.livjm.ac.uk/Services#"
+    xmlns:profile="http://www.daml.org/services/owl-s/1.0/Profile.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:process="http://www.daml.org/services/owl-s/1.0/Process.owl#">
+
+  <process:Effect rdf:about="http://www.livjm.ac.uk/ServiceRequest.owl#ReceivingAWave">
+    <process:parameterType rdf:resource="http://www.livjm.ac.uk/ServiceRequest.owl#ReceivingAWave"/>
+  </process:Effect>
+
+  <process:Effect rdf:about="http://www.livjm.ac.uk/ServiceRequest.owl#WavePropagation">
+    <process:parameterType rdf:resource="http://www.livjm.ac.uk/ServiceRequest.owl#WavePropagation"/>
+  </process:Effect>
+
+  <process:Input rdf:about="http://www.livjm.ac.uk/ServiceRequest.owl#RadioWave">
+    <process:parameterType rdf:resource="http://www.livjm.ac.uk/ServiceRequest.owl#RadioWave"/>
+  </process:Input>
+
+  <process:Input rdf:about="http://www.livjm.ac.uk/ServiceRequest.owl#Stop">
+    <process:parameterType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </process:Input>
+
+  <process:Input rdf:about="http://www.livjm.ac.uk/ServiceRequest.owl#Listen">
+    <process:parameterType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </process:Input>
+
+  <process:Output rdf:about="http://www.livjm.ac.uk/ServiceRequest.owl#EmittingSound">
+    <process:parameterType rdf:resource="http://www.livjm.ac.uk/ServiceRequest.owl#RadioWave"/>
+  </process:Output>
+
+  <profile:Profile rdf:about="http://www.daml.org/services/owl-s/1.0/Profile.owl#PSMProfile">
+    <profile:hasPrecondition>
+      <process:Precondition rdf:about="http://www.livjm.ac.uk/ServiceRequest.owl#AudioSpeaker">
+        <process:parameterType rdf:resource="http://www.livjm.ac.uk/ServiceRequest.owl#AudioSpeaker"/>
+      </process:Precondition>
+    </profile:hasPrecondition>
+
+    <profile:hasInput rdf:resource="http://www.livjm.ac.uk/ServiceRequest.owl#RadioWave"/>
+    <profile:hasInput rdf:resource="http://www.livjm.ac.uk/ServiceRequest.owl#Stop"/>
+    <profile:hasInput rdf:resource="http://www.livjm.ac.uk/ServiceRequest.owl#Play"/>
+    <profile:hasOutput rdf:resource="http://www.livjm.ac.uk/ServiceRequest.owl#RadioWave"/>
+    <profile:hasEffect rdf:resource="http://www.livjm.ac.uk/ServiceRequest.owl#ReceivingAWave"/>
+    <profile:hasEffect rdf:resource="http://www.livjm.ac.uk/ServiceRequest.owl#PropagatingAWave"/>
+
+  </profile:Profile>
+</rdf:RDF>

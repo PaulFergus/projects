@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="all" name="NASUF">
+    <target description="setup the properties." name="setProps" unless="setProps">
+        <property name="local_directory" value="../Package/NASUF"/>
+        <!--<property name="local_directory" value="\\192.168.0.1\NASUF"/>-->
+        <!--<property name="local_directory" value="\\150.204.51.242\NASUF"/>-->
+	
+	<!--Surround Sound 7.1 Machine-->
+        <!--<property name="local_directory" value="\\10.64.0.147\NASUF"/>-->
+        
+	<!--Big Screen Machine-->
+        <!--<property name="local_directory" value="\\150.204.48.230\NASUF"/>-->
+	
+	<!--Big Screen Machine-->
+        <!--<property name="local_directory" value="\\10.64.0.71\NASUF"/>-->
+	
+	<property name="bin_directory" value="${local_directory}/bin"/>
+        <property name="lib_directory" value="${local_directory}/lib"/>
+        <property name="src_directory" value="${local_directory}/src"/>
+        <property name="classes_directory" value="${local_directory}/classes"/>
+        <property name="lib_dcm" value="${lib_directory}/dcm"/>
+        <property name="lib_pscm" value="${lib_directory}/pscm"/>
+        <property name="lib_jxta" value="${lib_directory}/jxta"/>
+        <property name="lib_jena" value="${lib_directory}/jena"/>
+	<property name="lib_ontology" value="${lib_directory}/ontology"/>
+	<property name="lib_protege" value="${lib_directory}/protege"/>
+	<property name="lib_protegex" value="${lib_directory}/edu.stanford.smi.protegex.owl"/>
+	<property name="lib_protegex_ext" value="${lib_directory}/edu.stanford.smi.protegex.standard_extensions"/>
+        <property name="lib_owls_api" value="${lib_directory}/owls"/>
+        <property name="lib_jmf" value="${lib_directory}/jmf"/>
+	<property name="lib_racer" value="${lib_directory}/racer"/>
+        <property name="lib_gui" value ="${lib_directory}/gui"/>
+        <property name="lib_nasuf" value="${lib_directory}/nasuf"/>
+        <property name="lib_desc" value="${lib_directory}/desc"/>
+        <property name="lib_desc_adv" value="${lib_desc}/adv"/>
+        <property name="lib_desc_serviceadv" value="${lib_desc}/service_adv"/>
+    </target>
+
+    <!--Init: Create all the directories used in the project -->
+    <target depends="setProps" description="intialise it" name="init">
+        <mkdir dir="${local_directory}"/>
+        <mkdir dir="${bin_directory}"/>
+        <mkdir dir="${lib_directory}"/>
+        <mkdir dir="${src_directory}"/>
+        <mkdir dir="${classes_directory}"/>
+        <mkdir dir="${lib_dcm}"/>
+        <mkdir dir="${lib_pscm}"/>
+        <mkdir dir="${lib_jxta}"/>
+        <mkdir dir="${lib_jena}"/>
+	<mkdir dir="${lib_ontology}"/>
+	<mkdir dir="${lib_protege}"/>
+	<mkdir dir="${lib_protegex}"/>
+	<mkdir dir="${lib_protegex_ext}"/>
+        <mkdir dir="${lib_owls_api}"/>
+        <mkdir dir="${lib_jmf}"/>
+	<mkdir dir="${lib_racer}"/>
+        <mkdir dir="${lib_nasuf}"/>
+        <mkdir dir="${lib_desc}"/>
+        <mkdir dir="${lib_desc_adv}"/>
+        <mkdir dir="${lib_desc_serviceadv}"/>
+        
+        <!--
+        Copy all the files from the development bin directory
+        to the deployment bin directory
+        -->
+        <copy toDir="${bin_directory}">
+            <fileset dir="./bin" includes="**/*.*"/>
+        </copy>
+        <!--
+        Copy all the files from the development bin directory
+        to the deployment bin directory
+        -->
+        <copy toDir="${classes_directory}">
+            <fileset dir="./bin" includes="**/*.properties"/>
+        </copy>
+        <!--
+        Copy all the files from the development bin directory
+        to the deployment bin directory
+        -->
+        <copy toDir="${lib_dcm}">
+            <fileset dir="./lib/dcm" includes="**/*.xml"/>
+        </copy>
+        <!--
+        Copy all the files from the development bin directory
+        to the deployment bin directory
+        -->
+        <copy toDir="${lib_pscm}">
+            <fileset dir="./lib/pscm" includes="**/*.rdf"/>
+        </copy>
+        <!--
+        Copy all the jxta dependency jar files from the development
+        lib/jxta directory to the deployment lib/jxta directory
+        -->
+        <copy toDir="${lib_jxta}">
+            <fileset dir="./lib/jxta" includes="**/*.jar"/>
+        </copy>
+        <!--
+        Copy all the jena dependency jar files from the development
+        lib/jxta directory to the deployment lib/jena directory
+        -->
+        <copy toDir="${lib_jena}">
+            <fileset dir="./lib/jena" includes="**/*.jar"/>
+        </copy>
+	  <!--
+        Copy all the jena dependency jar files from the development
+        lib/jxta directory to the deployment lib/jena directory
+        -->
+        <copy toDir="${lib_ontology}">
+            <fileset dir="./lib/ontology" includes="**/*.*"/>
+        </copy>
+	  <!--
+        Copy all the jena dependency jar files from the development
+        lib/jxta directory to the deployment lib/jena directory
+        -->
+        <copy toDir="${lib_protege}">
+            <fileset dir="./lib/protege" includes="**/*.jar"/>
+        </copy>
+	  <!--
+        Copy all the jena dependency jar files from the development
+        lib/jxta directory to the deployment lib/jena directory
+        -->
+        <copy toDir="${lib_protegex}">
+            <fileset dir="./lib/edu.stanford.smi.protegex.owl" includes="**/*.*"/>
+        </copy>
+	  <!--
+        Copy all the jena dependency jar files from the development
+        lib/jxta directory to the deployment lib/jena directory
+        -->
+        <copy toDir="${lib_protegex_ext}">
+            <fileset dir="./lib/edu.stanford.smi.protegex.standard_extensions" includes="**/*.*"/>
+        </copy>
+        <!--
+        Copy all the owls-api dependency jar files from the development
+        lib/jxta directory to the deployment lib/jena directory
+        -->
+        <copy toDir="${lib_owls_api}">
+            <fileset dir="./lib/owls" includes="**/*.jar"/>
+        </copy>
+        <!--
+        Copy all the jmf dependency jar files from the development
+        lib/jmf directory to the deployment lib/jmf directory
+        -->
+        <copy toDir="${lib_jmf}">
+            <fileset dir="./lib/jmf" includes="**/*.*"/>
+        </copy>
+	<!--
+        Copy all the jmf dependency jar files from the development
+        lib/jmf directory to the deployment lib/jmf directory
+        -->
+        <copy toDir="${lib_racer}">
+            <fileset dir="./lib/racer" includes="**/*.*"/>
+        </copy>
+        <!--
+        Copy all the gui dependency jar files from the development
+        lib/gui directory to the deployment lib/gui directory
+        -->
+        <copy toDir="${lib_gui}">
+            <fileset dir="./lib/gui" includes="**/*.*"/>
+        </copy>
+        <!--
+        Copy all the jxta dependency jar files from the development
+        lib/jxta directory to the deployment lib/jxta directory
+        -->
+        <copy toDir="${lib_directory}">
+            <fileset dir="./bin/" includes="**/*.bat"/>
+        </copy>
+        <!--
+        Copy all the owls-api dependency jar files from the development
+        lib/owlsapi directory to the deployment lib/owlsapi directory
+        -->
+        <copy toDir="${src_directory}">
+            <fileset dir="./src" includes="**/*.java"/>
+        </copy>
+        <!--
+        Copy all the owls-api dependency jar files from the development
+        lib/owlsapi directory to the deployment lib/owlsapi directory
+        -->
+        <copy toDir="${src_directory}">
+            <fileset dir="./src" includes="**/*.xml"/>
+        </copy>
+        <!--
+        Copy all the owls-api dependency jar files from the development
+        lib/owlsapi directory to the deployment lib/owlsapi directory
+        -->
+        <copy toDir="${src_directory}">
+            <fileset dir="./src" includes="**/*.form"/>
+        </copy>
+        <!--
+        Copy all the owls-api dependency jar files from the development
+        lib/owlsapi directory to the deployment lib/owlsapi directory
+        -->
+        <copy toDir="${classes_directory}/NASUF/src">
+            <fileset dir="./src" includes="**/*.xml"/>
+        </copy>
+        <echo message="Successfully initialised everything"/>
+    </target>
+    
+    <target depends="init" description="Clean all" name="clean">
+        <!--
+        Delete all the jxta dependency files from the jxta 
+        deployment directory
+        -->
+        <delete>
+            <fileset dir="${lib_dcm}">
+                <include name="**/*.*"/>
+            </fileset>
+        </delete>
+        <!--
+        Delete all the jxta dependency files from the jxta 
+        deployment directory
+        -->
+        <delete>
+            <fileset dir="${lib_pscm}">
+                <include name="**/*.*"/>
+            </fileset>
+        </delete>
+        <!--
+        Delete all the jxta dependency files from the jxta 
+        deployment directory
+        -->
+        <delete>
+            <fileset dir="${lib_jxta}">
+                <include name="**/*.*"/>
+            </fileset>
+        </delete>
+        <!--
+        Delete all the jena dependency files from the jena 
+        deployment directory
+        -->
+        <delete>
+            <fileset dir="${lib_jena}">
+                <include name="**/*.*"/>
+            </fileset>
+        </delete>
+	<!--
+        Delete all the jena dependency files from the jena 
+        deployment directory
+        -->
+        <delete>
+            <fileset dir="${lib_ontology}">
+                <include name="**/*.*"/>
+            </fileset>
+        </delete>
+	<!--
+        Delete all the jena dependency files from the jena 
+        deployment directory
+        -->
+        <delete>
+            <fileset dir="${lib_protege}">
+                <include name="**/*.*"/>
+            </fileset>
+        </delete>
+	<!--
+        Delete all the jena dependency files from the jena 
+        deployment directory
+        -->
+        <delete>
+            <fileset dir="${lib_protegex}">
+                <include name="**/*.*"/>
+            </fileset>
+        </delete>
+	<!--
+        Delete all the jena dependency files from the jena 
+        deployment directory
+        -->
+        <delete>
+            <fileset dir="${lib_protegex_ext}">
+                <include name="**/*.*"/>
+            </fileset>
+        </delete>
+        <!--
+        Delete all the owls-api dependency files from the jena 
+        deployment directory
+        -->
+        <delete>
+            <fileset dir="${lib_owls_api}">
+                <include name="**/*.*"/>
+            </fileset>
+        </delete>
+        <!--
+        Delete all the jmf dependency files from the jmf 
+        deployment directory
+        -->
+        <delete>
+            <fileset dir="${lib_jmf}">
+                <include name="**/*.*"/>
+            </fileset>
+        </delete>
+	<!--
+        Delete all the jmf dependency files from the jmf 
+        deployment directory
+        -->
+        <delete>
+            <fileset dir="${lib_racer}">
+                <include name="**/*.*"/>
+            </fileset>
+        </delete>
+        <!--
+        Delete all the gui dependency files from the gui 
+        deployment directory
+        -->
+        <delete>
+            <fileset dir="${lib_gui}">
+                <include name="**/*.*"/>
+            </fileset>
+        </delete>
+        <!--
+        Delete all the owls-api dependency files from the jena 
+        deployment directory
+        -->
+        <delete>
+            <fileset dir="${lib_nasuf}">
+                <include name="**/*.*"/>
+            </fileset>
+        </delete>
+        <!--
+        Delete all the source files from the source 
+        deployment directory
+        -->
+        <delete>
+            <fileset dir="${src_directory}">
+                <include name="**/*.*"/>
+            </fileset>
+        </delete>
+        <!--
+        Delete all the class files from the class 
+        deployment directory
+        -->
+        <delete>
+            <fileset dir="${classes_directory}">
+                <include name="**/*.*"/>
+            </fileset>
+        </delete>
+        <echo message="Successfully cleaned everything"/>
+    </target>
+
+    <target depends="init" description="Compile everything" name="compile">
+        <javac debug="true" deprecation="true" destdir="${classes_directory}" srcdir="${src_directory}">
+            <classpath>
+                  <fileset dir="${classes_directory}">
+                      <include name="**/log4j.properties"/>
+                  </fileset>
+            </classpath>
+            <classpath>
+                  <fileset dir="${lib_directory}">
+                      <include name="**/*.jar"/>
+                  </fileset>
+            </classpath>
+            <classpath>
+                  <fileset dir="${lib_jxta}">
+                      <include name="**/*.jar"/>
+                  </fileset>
+            </classpath>
+            <classpath>
+                  <fileset dir="${lib_jena}">
+                      <include name="**/*.jar"/>
+                  </fileset>
+            </classpath>
+	    <classpath>
+                  <fileset dir="${lib_ontology}">
+                      <include name="**/*.*"/>
+                  </fileset>
+            </classpath>
+	    <classpath>
+                  <fileset dir="${lib_protege}">
+                      <include name="**/*.jar"/>
+                  </fileset>
+            </classpath>
+	    <classpath>
+                  <fileset dir="${lib_protegex}">
+                      <include name="**/*.jar"/>
+                  </fileset>
+            </classpath>
+	    <classpath>
+                  <fileset dir="${lib_protegex_ext}">
+                      <include name="**/*.jar"/>
+                  </fileset>
+            </classpath>
+            <classpath>
+                  <fileset dir="${lib_owls_api}">
+                      <include name="**/*.jar"/>
+                  </fileset>
+            </classpath>
+            <classpath>
+                  <fileset dir="${lib_jmf}">
+                      <include name="**/*.*"/>
+                  </fileset>
+            </classpath>
+            <classpath>
+                  <fileset dir="${lib_gui}">
+                      <include name="**/*.*"/>
+                  </fileset>
+            </classpath>
+        </javac>
+        <echo message="Successfully compiled everything"/>
+    </target>
+    
+    <target depends="init,compile" description="package everything" name="package">
+        <jar basedir="${classes_directory}" compress="true" jarfile="${lib_nasuf}/Audio.jar" manifest="${bin_directory}\audio.mf"/>
+        <jar basedir="${classes_directory}" compress="true" jarfile="${lib_nasuf}/Video.jar" manifest="${bin_directory}\video.mf"/>
+        <jar basedir="${classes_directory}" compress="true" jarfile="${lib_nasuf}/Player.jar" manifest="${bin_directory}\player.mf"/>
+        <jar basedir="${classes_directory}" compress="true" jarfile="${lib_nasuf}/Controller.jar" manifest="${bin_directory}\controller.mf"/>
+        <echo message="Successfully packaged everything"/>
+    </target>
+    
+    <target depends=" package" description="Build everything." name="all">
+        <echo message="Successfully built application"/>
+    </target>
+</project>
